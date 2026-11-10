@@ -181,6 +181,44 @@
   .premium-only .pill { background: var(--pink-text); color: #fff; font-size: 14px; font-weight: 700; padding: 6px 18px; border-radius: 999px; letter-spacing: .06em; }
   .premium-only p { font-size: 14px; color: var(--ink-2); }
 
+  /* 受講生の声 */
+  .voices-sec { background: var(--paper); }
+  .voices { display: grid; gap: 28px; margin-top: 36px; }
+  @media (min-width: 820px) { .voices { grid-template-columns: 1fr 1fr; gap: 48px; } }
+  .voice { border-left: 3px solid var(--pink); padding: 4px 0 4px 22px; margin: 0; }
+  .voice blockquote { margin: 0; }
+  .voice blockquote p { font-size: clamp(17px, 2vw, 20px); font-weight: 700; line-height: 1.85; }
+  .voice blockquote p::before { content: "「"; } .voice blockquote p::after { content: "」"; }
+  .voice figcaption { margin-top: 12px; font-size: 13px; color: var(--ink-3); }
+  .voice-note { margin-top: 24px; }
+
+  /* 類似サービスとの比較 */
+  .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-top: 16px; margin-top: 24px; }
+  @media (max-width: 767px) { .cmp-wrap { margin-right: -20px; padding-right: 20px; } }
+  .scroll-hint { text-align: right; font-size: 12px; color: var(--ink-3); margin-top: 20px; }
+  @media (min-width: 900px) { .scroll-hint { display: none; } }
+  .cmp { width: 100%; min-width: 760px; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 14px; line-height: 1.75; }
+  .cmp th, .cmp td { padding: 18px 14px; text-align: center; vertical-align: middle; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .cmp thead th { white-space: nowrap; font-size: 14px; color: var(--ink-2); background: var(--stone); border-bottom: 0; padding: 14px 10px; }
+  .cmp thead th:first-child { background: transparent; width: 104px; }
+  .cmp thead th:nth-child(3) { border-top-left-radius: 12px; }
+  .cmp thead th:last-child { border-top-right-radius: 12px; }
+  .cmp tbody th { text-align: left; font-size: 13px; color: var(--ink-3); background: var(--stone); }
+  .cmp td { color: var(--ink-2); }
+  .cmp .ph { display: inline-block; }
+  .cmp .us { position: relative; background: #F3F7F8; color: var(--ink); font-weight: 700; border-left: 2px solid var(--main); border-right: 2px solid var(--main); }
+  .cmp thead .us { background: var(--main); color: #fff; font: 500 18px/1.3 var(--en); padding: 18px 10px 14px; border-radius: 12px 12px 0 0; border-color: var(--main); }
+  .cmp tbody tr:last-child .us { border-bottom: 2px solid var(--main); border-radius: 0 0 12px 12px; }
+  .cmp .mark { display: block; font-size: 28px; line-height: 1.1; margin-bottom: 6px; font-weight: 400; color: #9AA0A8; }
+  .cmp .mark.great { color: var(--pink); font-size: 34px; }
+  .cmp .big { display: block; font-size: 17px; }
+  .cmp small { display: block; font-size: 12px; font-weight: 400; color: var(--ink-3); }
+  @media (max-width: 899px) {
+    .cmp { width: 684px; min-width: 684px; font-size: 13px; letter-spacing: .02em; }
+    .cmp thead th { width: 140px; } .cmp thead th.us { width: 180px; } .cmp thead th:first-child { width: 84px; }
+    .cmp th, .cmp td { padding: 14px 10px; }
+  }
+
   /* 6 これからのコミュミー(行で並べる) */
   .future-list { margin-top: 36px; border-top: 1px solid var(--line); }
   .future-list li { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 20px 0; border-bottom: 1px solid var(--line); }
@@ -405,6 +443,58 @@
         <li class="topic"><span class="no">3</span><h3>身体は近いのに、<br>寂しさが残るとき。</h3><p>自分は本当は何を望んでいるのか。心も身体も満たされるセックスについて考えます。</p></li>
       </ol>
       <div class="premium-only"><span class="pill">スタンダードから受講できます</span><p>この教材は、ライトには含まれません。</p></div>
+    </div>
+  </section>
+
+  <!-- 受講生の声(いただいた感想の趣旨) -->
+  <section class="sec voices-sec" aria-labelledby="voice-title">
+    <div class="wrap">
+      <p class="eyebrow">Voice</p>
+      <h2 class="h2" id="voice-title">受講生の声</h2>
+      <div class="voices">
+        <figure class="voice">
+          <blockquote><p><span class="ph">結婚したあとも、</span><span class="ph">どうしたらいいか分からなかった。</span><span class="ph">ここで学べてよかったです。</span></p></blockquote>
+          <figcaption>結婚している受講生</figcaption>
+        </figure>
+        <figure class="voice">
+          <blockquote><p><span class="ph">パートナーとのすれ違いが</span><span class="ph">なぜ起きるのか、</span><span class="ph">どう向き合えばいいかが分かって、</span><span class="ph">前より仲が深まりました。</span></p></blockquote>
+          <figcaption>パートナーがいる受講生</figcaption>
+        </figure>
+      </div>
+      <p class="note voice-note">※ いただいた感想の趣旨をまとめたものです。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <!-- 類似サービスとの比較 -->
+  <section class="sec cmp-sec" aria-labelledby="cmp-title">
+    <div class="wrap">
+      <p class="eyebrow">Compare</p>
+      <h2 class="h2" id="cmp-title">ほかのサービスとの違い</h2>
+      <p class="lead">出会いを増やすサービスとは別に、出会ったあと、付き合ったあとの関わり方を続けて学べます。</p>
+      <p class="scroll-hint" aria-hidden="true">横にスクロールして比べられます →</p>
+      <div class="cmp-wrap" tabindex="0" role="region" aria-label="ほかのサービスとの比較表">
+        <table class="cmp">
+          <thead><tr><th scope="col"><span class="sr">比べる項目</span></th><th scope="col" class="us">ComuMee</th><th scope="col">マッチングアプリ</th><th scope="col">恋愛コンサル</th><th scope="col">結婚相談所</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">交際後の<br>関係づくり</th>
+              <td class="us"><span class="mark great" role="img" aria-label="とても良い">◎</span><span class="ph">交際後も、</span><span class="ph">結婚後も、</span><span class="ph">続けて学べる</span></td>
+              <td><span class="mark" role="img" aria-label="対象外">×</span><span class="ph">サポートの対象外。</span><span class="ph">出会ったあとは、</span><span class="ph">自分で考えることに</span></td>
+              <td><span class="mark" role="img" aria-label="一部のみ">△</span><span class="ph">契約期間内のみ。</span><span class="ph">続けるには、</span><span class="ph">追加の費用がかかる</span></td>
+              <td><span class="mark" role="img" aria-label="一部のみ">△</span><span class="ph">成婚・交際成立まで。</span><span class="ph">その先は、</span><span class="ph">別に学ぶ必要がある</span></td></tr>
+            <tr><th scope="row">得意なこと</th>
+              <td class="us"><span class="ph">会話から、</span><span class="ph">恋愛・パートナーシップ、</span><span class="ph">スキンシップまで</span></td>
+              <td><span class="ph">出会いの機会を、</span><span class="ph">増やす</span></td>
+              <td><span class="ph">個別の悩みに、</span><span class="ph">手厚くアドバイス</span></td>
+              <td><span class="ph">結婚を前提にした、</span><span class="ph">出会いと活動の支援</span></td></tr>
+            <tr><th scope="row">費用の目安</th>
+              <td class="us"><b class="big">月7,800円〜</b><small>(税抜)</small></td>
+              <td><span class="nw">月4,000〜</span><span class="nw">10,000円程度</span></td>
+              <td><span class="nw">数十万円〜</span><span class="nw">200万円以上も</span></td>
+              <td><span class="nw">1年で50〜</span><span class="nw">100万円以上も</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px">アプリや結婚相談所と並行して受講することもできます。</p>
     </div>
   </section>
 
