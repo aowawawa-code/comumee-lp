@@ -4,39 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ComuMee｜好きな人と、本音で話したい(試作 v10)</title>
-<meta name="description" content="会話も、スキンシップも、自分の気持ちを伝えながら、相手の気持ちを聞くコツが学べるオンラインスクール ComuMee。(比較用の試作ページ)">
+<title>ComuMee｜好きな人と、本音で話したい(試作 v11)</title>
+<meta name="description" content="会話も、恋愛も、ふたりの身体の触れ合いも。男女の違いや一人ひとりの感じ方を、一人で動画で学べるオンラインスクール ComuMee。(比較用の試作ページ)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /* =========================================================
-     ComuMee LP v09(比較用)
-     方向性:SHElikes 7割(写真と見出しの配置・余白・読み進めやすさ)
-             性研究隊 3割(親密なテーマを安心して読める、やわらかな色と写真)
-     レイアウト:スマホで上から読む1カラム。PCは写真と文章を左右に並べる
+     ComuMee LP v11(比較・確認用)
+     参考:SHElikes 7(大きな写真・見出しの強弱・読む順番)/ 性研究隊 3(性の話題を明るく落ち着いて)
+     地は温かい白。ピンクは差し色だけ。同じ角丸カードを何段も重ねず、
+     セクションごとに「左右に分ける」「線でつなぐ」「番号で並べる」など形を変える。
      ========================================================= */
   :root {
-    /* 男女どちらにも寄せない配色:あたたかい白の地+紺に近い墨色+深い青緑。
-       やわらかさ(性研究隊 3割)はベージュの面と余白で出す */
-    --bg: #F8F7F4;          /* あたたかい白の地 */
-    --surface: #FFFFFF;
-    --tint: #EDF1F3;        /* うすい青灰の面 */
-    --sand: #F2EEE8;        /* ベージュの面 */
-    --mist: #E3EAEE;
-    --ink: #26303D;         /* 本文(紺に近い墨色) */
-    --ink-2: #4E5866;
-    --ink-3: #66707D;       /* 注記(地の色で4.5:1以上) */
-    --accent: #2F5D6E;      /* 申込みボタン・強調(白文字で7:1) */
-    --accent-hover: #244A58;
-    --accent-soft: #D3E3E8; /* マーカー */
-    --accent-tint: #EAF2F4; /* 強調列の面 */
-    --warm: #B9785F;        /* ほんの少しの暖色(年払いのお得表示など) */
-    --line: #E2E3E1;
-    --shadow: 0 2px 6px rgba(38,48,61,.04), 0 14px 34px rgba(38,48,61,.07);
-
+    --bg: #FAF8F5;          /* 温かい白 */
+    --paper: #FFFFFF;
+    --stone: #F2EFEA;       /* うすいベージュの面 */
+    --blush: #F8EDEB;       /* セックスの章だけに使う、ごくうすいピンク */
+    --ink: #262B33;         /* 本文 */
+    --ink-2: #4D535C;       /* 補足 */
+    --ink-3: #686E77;       /* 注記(地の色で4.5:1以上) */
+    --main: #2B4F5C;        /* 申込み・主ボタン(白文字で8:1) */
+    --main-hover: #203E49;
+    --pink: #C26878;        /* 差し色(線・ラベル・印) */
+    --pink-text: #A04F5F;   /* ピンクの文字(地の色で4.5:1以上) */
+    --pink-soft: #F0D6DA;   /* マーカー */
+    --line: #E4DFD8;
+    --shadow: 0 2px 6px rgba(38,43,51,.04), 0 16px 36px rgba(38,43,51,.07);
     --jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
-    --round: var(--jp);
     --en: "Jost", var(--jp);
     --ease: cubic-bezier(.2,.7,.2,1);
   }
@@ -46,297 +41,220 @@
   img { display: block; max-width: 100%; height: auto; }
   svg { display: block; }
   a { color: inherit; }
-  p, h1, h2, h3, h4, figure { margin: 0; }
+  p, h1, h2, h3, h4, figure, ol, ul { margin: 0; }
+  ol, ul { padding: 0; list-style: none; }
   h1, h2, h3 { text-wrap: balance; }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  :focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 6px; }
   .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
   @media (min-width: 768px) { .wrap { padding-left: 40px; padding-right: 40px; } }
+  .narrow { max-width: 760px; }
   .nw { white-space: nowrap; }
   .ph { display: inline-block; }
+  .mk { background: linear-gradient(transparent 64%, var(--pink-soft) 64%); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 16px; z-index: 100; }
   .skip:focus { left: 8px; }
-  .mk { background: linear-gradient(transparent 62%, var(--accent-soft) 62%); }
-  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* 文字の段 */
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 var(--en); letter-spacing: .26em; color: var(--pink-text); text-transform: uppercase; margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--pink); }
+  .h2 { font-size: clamp(25px, 3.6vw, 36px); line-height: 1.55; font-weight: 900; letter-spacing: .05em; }
+  .lead { margin-top: 18px; color: var(--ink-2); font-size: 16px; }
+  .note { font-size: 13px; color: var(--ink-3); line-height: 1.8; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); background: var(--paper); white-space: nowrap; }
+  .tag.std { border-color: var(--main); color: var(--main); }
+  .tag.pre { border-color: var(--pink); color: var(--pink-text); }
+  .ex { display: inline-block; font-size: 12px; font-weight: 700; color: var(--pink-text); letter-spacing: .1em; }
 
   /* ボタン */
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 32px; border-radius: 999px; border: 1.5px solid transparent; font: 700 16px/1.4 var(--jp); letter-spacing: .08em; text-decoration: none; cursor: pointer; transition: background-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 14px 30px; border-radius: 999px; border: 1.5px solid transparent; font: 700 16px/1.4 var(--jp); letter-spacing: .08em; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color .2s var(--ease), border-color .2s var(--ease); }
   .btn svg { width: 18px; height: 18px; flex: none; transition: transform .2s var(--ease); }
   .btn:hover svg { transform: translateX(3px); }
-  .btn-main { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(47,93,110,.25); }
-  .btn-main:hover { background: var(--accent-hover); }
-  .btn-main:active { transform: translateY(1px); }
-  .btn-sub { background: var(--surface); color: var(--accent); border-color: var(--accent-soft); }
-  .btn-sub:hover { border-color: var(--accent); }
-  .btn-wide { width: 100%; max-width: 420px; min-height: 60px; font-size: 17px; }
-  .center { text-align: center; }
+  .btn-main { background: var(--main); color: #fff; }
+  .btn-main:hover { background: var(--main-hover); }
+  .btn-sub { background: var(--paper); color: var(--main); border-color: var(--line); }
+  .btn-sub:hover { border-color: var(--main); }
+  .text-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--main); text-decoration: none; border-bottom: 1px solid currentColor; padding: 4px 0; }
 
   /* ヘッダー */
-  .header { position: sticky; top: 0; z-index: 50; background: rgba(248,247,244,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .header { position: sticky; top: 0; z-index: 50; background: rgba(250,248,245,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .2s; }
   .header.on { border-bottom-color: var(--line); }
   .header-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
   .logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
   .logo b { font: 500 22px/1 var(--en); letter-spacing: .03em; }
-  .logo small { font-size: 11px; color: var(--ink-3); letter-spacing: .08em; white-space: nowrap; }
+  .logo small { font-size: 11px; color: var(--ink-3); letter-spacing: .08em; }
   @media (max-width: 420px) { .logo small { display: none; } }
   .nav { display: none; gap: 26px; }
   .nav a { text-decoration: none; font-size: 14px; color: var(--ink-2); padding: 8px 0; }
-  .nav a:hover { color: var(--accent); }
+  .nav a:hover { color: var(--main); }
   @media (min-width: 1000px) { .nav { display: flex; } }
-  .header .btn { min-height: 42px; padding: 8px 18px; font-size: 13px; box-shadow: none; white-space: nowrap; }
+  .header .btn { min-height: 40px; padding: 6px 16px; font-size: 13px; }
 
-  /* 共通 */
-  section { scroll-margin-top: 68px; }
-  .sec { padding-block: 96px; }
-  @media (max-width: 767px) { .sec { padding-block: 72px; } }
-  .bg-white { background: var(--surface); }
-  .bg-tint { background: var(--tint); }
-  .bg-sand { background: var(--sand); }
-  .head { margin-bottom: 44px; }
-  .head.center { text-align: center; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 var(--en); letter-spacing: .26em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: currentColor; }
-  .head h2 { font-family: var(--round); font-size: clamp(24px, 3.4vw, 34px); line-height: 1.6; font-weight: 700; letter-spacing: .06em; }
-  .head p { margin-top: 18px; color: var(--ink-2); max-width: 36em; }
-  .head.center p { margin-left: auto; margin-right: auto; }
-  .ex-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--accent); background: var(--surface); border: 1px solid var(--accent-soft); border-radius: 999px; padding: 2px 12px; }
-  .note { font-size: 13px; color: var(--ink-3); line-height: 1.8; }
+  section { scroll-margin-top: 64px; }
+  .sec { padding-block: 104px; }
+  @media (max-width: 767px) { .sec { padding-block: 76px; } }
 
-  /* 1 ファーストビュー */
-  .fv { position: relative; overflow: hidden; padding-block: 16px 72px; }
-  @media (min-width: 960px) { .fv { padding-block: 64px 104px; } }
-  .fv::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: var(--tint); right: -160px; top: -180px; z-index: 0; }
-  .fv-grid { position: relative; z-index: 1; display: grid; gap: 28px; align-items: center; }
-  @media (min-width: 960px) { .fv-grid { grid-template-columns: 1fr 1fr; gap: 56px; } .fv-photo { order: 2; } }
-  .fv-photo { position: relative; }
-  .fv-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 34% 28%; border-radius: 28px 28px 28px 120px; box-shadow: var(--shadow); }
-  @media (min-width: 960px) { .fv-photo img { aspect-ratio: 5/6; border-radius: 36px 36px 36px 180px; } }
-  .fv-photo figcaption { position: absolute; right: 14px; bottom: 14px; background: rgba(255,255,255,.94); border-radius: 999px; padding: 6px 14px; font-size: 12px; color: var(--ink-2); letter-spacing: .06em; }
-  .fv-kind { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .1em; margin-bottom: 10px; }
-  .fv h1 { font-family: var(--round); font-size: clamp(30px, 5vw, 50px); line-height: 1.45; font-weight: 900; letter-spacing: .06em; margin-bottom: 18px; }
-  .fv-lead { font-size: clamp(15px, 1.7vw, 17px); color: var(--ink-2); line-height: 1.95; max-width: 30em; }
-  .fv-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 26px; padding: 0; list-style: none; }
-  .fv-facts li { font-size: 13px; padding: 5px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); }
-  .fv-badge { display: inline-block; margin-left: 8px; font-size: 11px; font-weight: 700; color: var(--accent); border: 1px solid var(--accent-soft); background: var(--surface); padding: 1px 10px; border-radius: 999px; vertical-align: 2px; letter-spacing: .1em; }
+  /* 1 ファーストビュー(写真を大きく、言葉は少なく) */
+  .fv { padding-block: 0 80px; }
+  .fv-grid { display: grid; gap: 28px; }
+  @media (min-width: 960px) { .fv { padding-block: 48px 112px; } .fv-grid { grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; } .fv-photo { order: 2; } }
+  .fv-photo img { width: 100%; aspect-ratio: 4/3.1; object-fit: cover; object-position: 34% 28%; }
+  @media (max-width: 959px) { .fv-photo { margin-left: calc(-1 * max(20px, env(safe-area-inset-left, 0px))); margin-right: calc(-1 * max(20px, env(safe-area-inset-right, 0px))); } }
+  @media (min-width: 768px) and (max-width: 959px) { .fv-photo { margin-left: -40px; margin-right: -40px; } }
+  @media (min-width: 960px) { .fv-photo img { aspect-ratio: 4/5; border-radius: 6px; } }
+  .fv-kicker { font-size: 13px; font-weight: 700; color: var(--pink-text); letter-spacing: .1em; margin-bottom: 14px; }
+  .fv h1 { font-size: clamp(31px, 5.2vw, 54px); line-height: 1.4; font-weight: 900; letter-spacing: .05em; }
+  .fv-sub { margin-top: 12px; font-size: clamp(17px, 2.1vw, 21px); font-weight: 700; line-height: 1.7; letter-spacing: .06em; }
+  .fv-desc { margin-top: 18px; color: var(--ink-2); max-width: 30em; }
+  .fv-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 28px; }
+  @media (max-width: 959px) { .fv-actions .btn { flex: 1 1 100%; } .fv-actions .text-link { margin: 0 auto; } }
 
-  /* 2 場面 */
-  .scenes { display: grid; gap: 16px; }
-  @media (min-width: 900px) { .scenes { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
-  .scene { background: var(--surface); border-radius: 20px; padding: 28px 24px; border: 1px solid var(--line); display: grid; gap: 14px; align-content: start; }
-  .scene-who { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .08em; }
-  .scene-who svg { width: 22px; height: 22px; }
-  .scene p { font-size: 16px; line-height: 1.9; }
-  .scene q { quotes: "「" "」"; font-weight: 700; }
-  .scene-2 { padding-top: 14px; border-top: 1px dashed var(--line); }
-  .scenes-foot { margin-top: 32px; text-align: center; color: var(--ink-2); }
+  /* 2 すれ違い(左右に分ける) */
+  .gap-head { text-align: center; margin-bottom: 48px; }
+  .gap-scene { text-align: center; font-size: 14px; color: var(--ink-3); margin-top: 10px; }
+  .gap-pair { display: grid; gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  @media (min-width: 820px) { .gap-pair { grid-template-columns: 1fr 1fr; } .gap-side + .gap-side { border-left: 1px solid var(--line); } }
+  @media (max-width: 819px) { .gap-side + .gap-side { border-top: 1px dashed var(--line); } }
+  .gap-side { padding: 32px 8px; }
+  @media (min-width: 820px) { .gap-side { padding: 40px 40px; } }
+  .who { font: 500 13px/1 var(--en); letter-spacing: .2em; color: var(--ink-3); margin-bottom: 14px; }
+  .gap-side q { quotes: "「" "」"; display: block; font-size: clamp(18px, 2.2vw, 22px); font-weight: 700; line-height: 1.75; }
+  .gap-side p { margin-top: 12px; font-size: 14px; color: var(--ink-2); }
+  .gap-msg { margin-top: 44px; text-align: center; }
+  .gap-msg h3 { font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; letter-spacing: .05em; line-height: 1.7; }
+  .gap-msg p { margin: 16px auto 0; max-width: 34em; color: var(--ink-2); }
 
-  /* 3 ゴールは恋人だけじゃない */
-  .route { list-style: none; padding: 0; margin: 0 auto 56px; max-width: 920px; display: grid; gap: 10px; counter-reset: r; }
-  @media (min-width: 760px) { .route { grid-template-columns: repeat(4, 1fr); gap: 0; } }
-  .route li { position: relative; background: var(--surface); border: 1px solid var(--line); padding: 14px 18px; display: grid; gap: 2px; }
-  @media (min-width: 760px) {
-    .route li { text-align: center; padding: 18px 10px; border-right: 0; }
-    .route li:first-child { border-radius: 16px 0 0 16px; }
-    .route li:last-child { border-radius: 0 16px 16px 0; border-right: 1px solid var(--line); }
-  }
-  @media (max-width: 759px) { .route li { border-radius: 14px; } }
-  .route b { font-size: 15px; letter-spacing: .06em; }
-  .route small { font-size: 12px; color: var(--ink-3); }
-  .route li.sk { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .route li.sk small { color: #D9E7EB; }
-  .goals { display: grid; gap: 16px; }
-  @media (min-width: 820px) { .goals { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-  .goal { padding: 8px 0; display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; }
-  .goal-ic { width: 56px; height: 56px; border-radius: 50%; background: var(--tint); color: var(--accent); display: grid; place-items: center; }
-  .goal-ic svg { width: 26px; height: 26px; }
-  .goal h3 { font-family: var(--round); font-size: 18px; letter-spacing: .06em; line-height: 1.6; margin-bottom: 6px; }
-  .goal p { font-size: 15px; color: var(--ink-2); }
-  .matrix-wrap { margin-top: 56px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .matrix { width: 100%; min-width: 520px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 20px; border: 1px solid var(--line); font-size: 14px; overflow: hidden; }
-  .matrix caption { text-align: left; font-family: var(--round); font-weight: 700; font-size: 17px; letter-spacing: .06em; padding-bottom: 14px; }
-  .matrix th, .matrix td { padding: 14px 12px; border-bottom: 1px solid var(--line); text-align: center; }
-  .matrix tr:last-child th, .matrix tr:last-child td { border-bottom: 0; }
-  .matrix thead th { font-size: 13px; color: var(--ink-2); background: var(--bg); }
-  .matrix thead th.std { background: var(--accent); color: #fff; }
-  .matrix tbody th { text-align: left; font-weight: 700; }
-  .matrix tbody th small { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); }
-  .matrix td.std { background: var(--accent-tint); }
-  @media (max-width: 599px) {
-    .matrix { min-width: 0; font-size: 13px; }
-    .matrix th, .matrix td { padding: 12px 6px; }
-    .matrix tbody th { padding-left: 14px; }
-    .matrix tbody th small { display: none; }
-    .matrix { table-layout: fixed; }
-    .matrix thead th { font-size: 12px; letter-spacing: 0; white-space: nowrap; padding: 12px 2px; }
-    .matrix thead th:not(:first-child) { width: 23%; }
-  }
-  .yes { color: var(--accent); font-size: 18px; font-weight: 700; }
-  .no { color: #B5BCC4; }
-  .future { margin-top: 20px; font-size: 13px; color: var(--ink-3); }
-  .future b { color: var(--ink-2); }
+  /* 3 学べるテーマ(線でつなぐ) */
+  .themes-bg { background: var(--paper); }
+  .themes-grid { display: grid; gap: 40px; }
+  @media (min-width: 960px) { .themes-grid { grid-template-columns: .8fr 1.2fr; gap: 64px; } .themes-intro { position: sticky; top: 100px; align-self: start; } }
+  .flow { position: relative; }
+  .flow::before { content: ""; position: absolute; left: 15px; top: 14px; bottom: 14px; width: 1px; background: var(--line); }
+  .flow li { position: relative; display: grid; grid-template-columns: 32px 1fr; gap: 18px; padding: 18px 0; }
+  .flow li + li { border-top: 1px solid var(--line); }
+  .flow .num { width: 32px; height: 32px; border-radius: 50%; background: var(--paper); border: 1px solid var(--ink-3); display: grid; place-items: center; font: 500 13px/1 var(--en); position: relative; z-index: 1; }
+  .flow li.sex .num { border-color: var(--pink); color: var(--pink-text); }
+  .flow h3 { font-size: 18px; line-height: 1.6; letter-spacing: .04em; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+  .flow p { margin-top: 4px; font-size: 14px; color: var(--ink-2); }
+  .themes-foot { margin-top: 24px; }
 
-  /* 4 スタンダード */
-  .std-grid { display: grid; gap: 40px; align-items: center; }
-  @media (min-width: 960px) { .std-grid { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
-  .std-photo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 120px 28px 28px 28px; box-shadow: var(--shadow); }
-  .points { display: grid; gap: 18px; padding: 0; margin: 0; list-style: none; }
-  .point { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
-  .point-ic { width: 44px; height: 44px; border-radius: 14px; background: var(--surface); border: 1px solid var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
-  .point-ic svg { width: 22px; height: 22px; }
-  .point h3 { font-size: 17px; letter-spacing: .06em; line-height: 1.6; }
-  .point p { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
-  .talk { margin-top: 56px; background: var(--surface); border-radius: 28px; box-shadow: var(--shadow); padding: 32px 24px; }
-  @media (min-width: 768px) { .talk { padding: 44px 48px; } }
-  .talk-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 22px; }
-  .talk-head h3 { font-family: var(--round); font-size: 19px; letter-spacing: .06em; line-height: 1.6; }
-  .talk-flow { display: grid; gap: 14px; }
-  @media (min-width: 820px) { .talk-flow { grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; } }
-  .bubble { position: relative; border-radius: 20px; padding: 18px 20px; font-size: 16px; line-height: 1.85; }
-  .bubble small { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; margin-bottom: 6px; }
-  .bubble.before { background: var(--bg); color: var(--ink-2); }
-  .bubble.before small { color: var(--ink-3); }
-  .bubble.before p { text-decoration: line-through; text-decoration-color: rgba(102,112,125,.45); }
-  .bubble.after { background: var(--tint); color: var(--ink); font-weight: 700; }
-  .bubble.after small { color: var(--accent); }
-  .talk-arrow { display: grid; place-items: center; color: var(--accent); }
-  .talk-arrow svg { width: 26px; height: 26px; }
-  @media (max-width: 819px) { .talk-arrow svg { transform: rotate(90deg); } }
-  .talk-why { margin-top: 20px; font-size: 15px; color: var(--ink-2); }
-  .talk-2 { margin-top: 40px; padding-top: 32px; border-top: 1px dashed var(--line); }
-  .minis { display: grid; gap: 16px; margin-top: 20px; }
-  @media (min-width: 820px) { .minis { grid-template-columns: 1fr 1fr; gap: 20px; } }
-  .mini { background: var(--surface); border-radius: 20px; padding: 24px; border: 1px solid var(--line); }
-  .mini .scene-who { margin-bottom: 8px; }
-  .mini h4 { font-size: 16px; line-height: 1.7; margin-bottom: 8px; }
-  .mini p { font-size: 14px; color: var(--ink-2); }
-  .mini b { color: var(--ink); }
+  /* 4 スタンダード(写真と文章を左右に、学び方は横一列) */
+  .std-grid { display: grid; gap: 36px; align-items: center; }
+  @media (min-width: 960px) { .std-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  .std-photo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 6px; }
+  .for-you { margin-top: 28px; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .for-you li { display: grid; grid-template-columns: 7.2em 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .for-you b { font-size: 13px; color: var(--ink-3); line-height: 1.8; }
+  .for-you span { font-weight: 700; line-height: 1.8; }
+  .how { margin-top: 72px; }
+  .how h3 { font-size: 20px; font-weight: 900; letter-spacing: .05em; margin-bottom: 8px; }
+  .how-steps { display: grid; gap: 20px; margin-top: 28px; counter-reset: s; }
+  @media (min-width: 900px) { .how-steps { grid-template-columns: 1fr 1.4fr; gap: 0; } .how-steps > div + div { border-left: 1px solid var(--line); } }
+  .how-steps > div { padding: 4px 0; }
+  @media (min-width: 900px) { .how-steps > div { padding: 4px 36px; } .how-steps > div:first-child { padding-left: 0; } }
+  .step-label { font: 500 12px/1 var(--en); letter-spacing: .22em; color: var(--pink-text); margin-bottom: 10px; }
+  .how-steps h4 { font-size: 17px; line-height: 1.6; margin-bottom: 8px; }
+  .how-steps p { font-size: 14px; color: var(--ink-2); }
+  .says { margin-top: 14px; display: grid; gap: 10px; }
+  .say { background: var(--paper); border-left: 3px solid var(--pink); padding: 12px 16px; font-weight: 700; font-size: 15px; line-height: 1.8; }
+  .say small { display: block; font-weight: 500; font-size: 12px; color: var(--ink-3); margin-bottom: 2px; }
+  .study { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .study b { font-size: 16px; }
+  .study span { font-size: 14px; color: var(--ink-2); }
+  .std-cta { margin-top: 40px; }
 
-  /* 5 スキンシップ(濃い色の帯で強調) */
-  .sk-band { background: var(--ink); color: #fff; }
-  .sk-band .eyebrow { color: #A9CBD5; }
-  .sk-top { display: grid; gap: 32px; align-items: center; }
-  @media (min-width: 900px) { .sk-top { grid-template-columns: 1.2fr .8fr; gap: 56px; } }
-  .sk-band h2 { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.45; font-weight: 900; letter-spacing: .06em; margin-bottom: 20px; }
-  .sk-lead { color: #D5DCE3; max-width: 34em; margin-bottom: 22px; }
-  .sk-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 70%; border-radius: 28px; }
-  @media (min-width: 900px) { .sk-photo img { aspect-ratio: 1/1; } }
-  .plan-flag { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--ink); background: #fff; border-radius: 999px; padding: 6px 18px; letter-spacing: .08em; }
-  .sk-pair { display: grid; gap: 14px; margin-top: 40px; }
-  @media (min-width: 640px) { .sk-pair { grid-template-columns: 1fr 1fr; gap: 20px; } }
-  .sk-card { background: var(--surface); color: var(--ink); border-radius: 20px; padding: 24px 22px; }
-  .sk-card h3 { font-size: 18px; letter-spacing: .04em; line-height: 1.6; margin-bottom: 10px; }
-  .sk-card .say { background: var(--tint); border-radius: 14px; padding: 12px 14px; font-weight: 700; font-size: 15px; line-height: 1.8; margin-top: 8px; }
-  .sk-sub { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
-  .sk-topics { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
-  @media (min-width: 760px) { .sk-topics { grid-template-columns: repeat(4, 1fr); } }
-  .sk-topics li { border: 1px solid rgba(255,255,255,.22); border-radius: 16px; padding: 16px 18px; display: grid; gap: 4px; }
-  .sk-topics b { font-size: 15px; letter-spacing: .06em; }
-  .sk-topics span { font-size: 13px; color: #C7D0D9; line-height: 1.7; }
+  /* 5 セックスの章(番号で並べる。写真は使わない) */
+  .sex { background: var(--blush); }
+  .sex-head { max-width: 760px; }
+  .views { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 24px; align-items: center; }
+  .views span { font-size: 14px; font-weight: 700; background: var(--paper); padding: 6px 14px; border-radius: 999px; }
+  .views i { font-style: normal; color: var(--pink); }
+  @media (max-width: 599px) { .views i { display: none; } }
+  .topics { margin-top: 48px; border-top: 1px solid rgba(194,104,120,.35); }
+  .topic { display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 28px 0; border-bottom: 1px solid rgba(194,104,120,.35); }
+  @media (min-width: 820px) { .topic { grid-template-columns: 72px 1fr 1.1fr; gap: 32px; align-items: start; } }
+  .topic .no { font: 400 34px/1 var(--en); color: var(--pink); }
+  .topic h3 { font-size: 18px; line-height: 1.7; letter-spacing: .03em; }
+  .topic p { font-size: 15px; color: var(--ink-2); }
+  @media (max-width: 819px) { .topic p { grid-column: 2; } }
+  .premium-only { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+  .premium-only .pill { background: var(--pink-text); color: #fff; font-size: 14px; font-weight: 700; padding: 6px 18px; border-radius: 999px; letter-spacing: .06em; }
+  .premium-only p { font-size: 14px; color: var(--ink-2); }
 
-  /* 6 受講後に試せること */
-  .tries { display: grid; gap: 16px; }
-  @media (min-width: 760px) { .tries { grid-template-columns: 1fr 1fr; gap: 20px; } }
-  .try { background: var(--surface); border-radius: 20px; padding: 24px; border: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
-  .try .say { font-weight: 700; font-size: 16px; line-height: 1.85; }
-  .try p.note { margin-top: 2px; }
-  .try .plan-mini { justify-self: start; font-size: 11px; font-weight: 700; color: var(--accent); border: 1px solid var(--accent-soft); border-radius: 999px; padding: 1px 10px; letter-spacing: .08em; }
+  /* 6 これからのコミュミー(行で並べる) */
+  .future-list { margin-top: 36px; border-top: 1px solid var(--line); }
+  .future-list li { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  @media (min-width: 760px) { .future-list li { grid-template-columns: 14em 1fr; gap: 24px; align-items: baseline; } }
+  .future-list b { font-size: 17px; letter-spacing: .04em; }
+  .future-list span { color: var(--ink-2); }
+  .future-note { margin-top: 16px; }
 
-  /* 7 比較 */
-  .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-top: 16px; }
-  @media (max-width: 767px) { .cmp-wrap { margin-right: -20px; padding-right: 20px; } }
-  .scroll-hint { text-align: right; font-size: 12px; color: var(--ink-3); }
-  @media (min-width: 900px) { .scroll-hint { display: none; } }
-  .cmp { width: 100%; min-width: 760px; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 14px; line-height: 1.75; }
-  .cmp th, .cmp td { padding: 18px 14px; text-align: center; vertical-align: middle; background: var(--surface); border-bottom: 1px solid var(--line); }
-  .cmp thead th { white-space: nowrap; font-size: 14px; color: var(--ink-2); background: var(--bg); border-bottom: 0; padding: 14px 10px; }
-  .cmp thead th:first-child { background: transparent; width: 104px; }
-  .cmp thead th:nth-child(3) { border-top-left-radius: 16px; }
-  .cmp thead th:last-child { border-top-right-radius: 16px; }
-  .cmp tbody th { text-align: left; font-size: 13px; color: var(--ink-3); background: var(--bg); }
-  .cmp tbody tr:first-child th { border-top-left-radius: 16px; }
-  .cmp tbody tr:last-child th { border-bottom-left-radius: 16px; }
-  .cmp tbody tr:last-child td:last-child { border-bottom-right-radius: 16px; }
-  .cmp td { color: var(--ink-2); }
-  .cmp .us { position: relative; background: var(--accent-tint); color: var(--ink); font-weight: 700; border-left: 2px solid var(--accent); border-right: 2px solid var(--accent); border-bottom-color: var(--accent-soft); }
-  .cmp thead .us { background: var(--accent); color: #fff; font: 500 18px/1.3 var(--en); padding: 20px 10px 16px; border-radius: 16px 16px 0 0; border-color: var(--accent); }
-  .cmp tbody tr:last-child .us { border-bottom: 2px solid var(--accent); border-radius: 0 0 16px 16px; }
-  .cmp .mark { display: block; font-size: 28px; line-height: 1.1; margin-bottom: 6px; font-weight: 400; }
-  .cmp .mark.great { color: var(--accent); font-size: 34px; }
-  .cmp .mark.mid, .cmp .mark.bad { color: #9AA3AD; }
-  .cmp .big { display: block; font-size: 17px; }
-  @media (max-width: 899px) {
-    .cmp { width: 684px; min-width: 684px; font-size: 13px; letter-spacing: .02em; }
-    .cmp thead th { width: 140px; } .cmp thead th.us { width: 180px; } .cmp thead th:first-child { width: 84px; }
-    .cmp th, .cmp td { padding: 14px 10px; }
-  }
-
-  /* 8 料金 */
-  .billing { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); gap: 4px; margin: 0 auto 12px; }
+  /* 7 料金 */
+  .pricing { background: var(--stone); }
+  .price-head { text-align: center; }
+  .billing { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); gap: 4px; margin-top: 28px; }
   .billing button { min-height: 44px; padding: 8px 22px; border: 0; border-radius: 999px; background: transparent; font: 700 14px/1.2 var(--jp); color: var(--ink-2); letter-spacing: .06em; cursor: pointer; }
   .billing button[aria-pressed="true"] { background: var(--ink); color: #fff; }
-  .billing button small { display: block; font-size: 11px; font-weight: 500; margin-top: 2px; opacity: .85; }
-  .tax { font-size: 13px; color: var(--ink-2); text-align: center; margin-bottom: 40px; }
-  .tax b { color: var(--ink); }
-  .plans { display: grid; gap: 28px; align-items: start; }
+  .billing button small { display: block; font-size: 12px; font-weight: 500; margin-top: 2px; opacity: .85; }
+  .tax { margin-top: 14px; font-size: 15px; font-weight: 700; }
+  .plans { display: grid; gap: 28px; align-items: start; margin-top: 40px; }
   @media (min-width: 960px) { .plans { grid-template-columns: 1fr 1.08fr 1fr; gap: 20px; } }
-  .plan { position: relative; display: flex; flex-direction: column; background: var(--surface); border-radius: 24px; border: 1px solid var(--line); padding: 36px 24px 28px; scroll-margin-top: 80px; }
-  .plan.pick { border: 2px solid var(--accent); box-shadow: var(--shadow); }
+  .plan { position: relative; display: flex; flex-direction: column; background: var(--paper); border-radius: 16px; border: 1px solid var(--line); padding: 34px 24px 26px; scroll-margin-top: 80px; }
+  .plan.pick { border: 2px solid var(--main); box-shadow: var(--shadow); }
   @media (min-width: 960px) { .plan.pick { transform: translateY(-14px); } }
   @media (max-width: 959px) { .plan.pick { order: -1; } }
-  .rec { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 6px 18px; border-radius: 999px; white-space: nowrap; }
+  .rec { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--pink-text); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 6px 18px; border-radius: 999px; white-space: nowrap; }
   .plan-en { font: 500 12px/1 var(--en); letter-spacing: .26em; color: var(--ink-3); text-align: center; }
-  .plan h3 { text-align: center; font-family: var(--round); font-size: 22px; letter-spacing: .1em; margin: 8px 0 4px; }
+  .plan h3 { text-align: center; font-size: 22px; letter-spacing: .1em; margin: 8px 0 4px; }
   .plan-for { text-align: center; font-size: 14px; color: var(--ink-2); margin-bottom: 18px; }
-  .price { text-align: center; padding: 18px 0 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 18px; font-variant-numeric: tabular-nums; }
-  .price .lab { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; margin-bottom: 6px; letter-spacing: .08em; }
-  .p-month .lab { background: var(--mist); color: var(--ink); }
-  .p-year .lab { background: #F3E3DB; color: var(--ink); }
+  .price { text-align: center; padding: 18px 0 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 16px; font-variant-numeric: tabular-nums; }
+  .price .lab { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; margin-bottom: 6px; letter-spacing: .08em; background: var(--stone); }
+  .p-year .lab { background: var(--pink-soft); }
   .price b { font: 500 40px/1.1 var(--en); letter-spacing: .01em; margin: 0 2px; }
   .price .unit { font-size: 14px; color: var(--ink-2); }
-  .price .save { display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 700; color: #8E5440; }
+  .price .save { display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--pink-text); }
   .price .alt { display: block; margin-top: 8px; font-size: 12px; color: var(--ink-3); line-height: 1.7; }
-  .renew { font-size: 13px; font-weight: 700; text-align: center; margin: -6px 0 16px; padding: 8px 12px; border-radius: 12px; line-height: 1.7; }
-  .p-month.renew { background: var(--bg); color: var(--ink-2); }
-  .p-year.renew { background: #F7EEEA; color: #7A4634; }
+  .renew { font-size: 13px; font-weight: 700; text-align: center; margin-bottom: 16px; line-height: 1.7; color: var(--ink-2); }
+  .p-year.renew { color: var(--pink-text); }
   #pricing[data-billing="month"] .p-year, #pricing[data-billing="year"] .p-month { display: none; }
-  .plan ul { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; flex: 1; }
+  .plan ul { margin: 0 0 22px; display: grid; gap: 9px; flex: 1; }
   .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 14px; line-height: 1.75; }
-  .plan li svg { width: 18px; height: 18px; margin-top: 4px; color: var(--accent); }
+  .plan li svg { width: 18px; height: 18px; margin-top: 4px; color: var(--main); }
   .plan li.off { color: var(--ink-3); }
-  .plan li.off svg { color: #C3C9CF; }
-  .plan li .tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent); border: 1px solid var(--accent-soft); border-radius: 999px; padding: 0 8px; margin-left: 4px; white-space: nowrap; }
-  .plan .btn { width: 100%; min-height: 54px; padding-left: 16px; padding-right: 16px; font-size: 15px; white-space: nowrap; }
-  .plan .choose { margin-top: 10px; text-align: center; font-size: 12px; color: var(--ink-3); line-height: 1.7; }
-  .pay-note { margin: 36px auto 0; max-width: 760px; background: var(--surface); border-radius: 16px; border: 1px solid var(--line); padding: 18px 22px; font-size: 13px; color: var(--ink-2); line-height: 1.9; }
-  .pay-note li { margin-left: 1.2em; }
-  .pay-note ul { margin: 0; padding: 0; }
+  .plan li.off svg { color: #C4C8CD; }
+  .plan li.sex-item svg { color: var(--pink); }
+  .plan .btn { width: 100%; min-height: 54px; padding-left: 14px; padding-right: 14px; font-size: 15px; }
+  .plan .check { margin-top: 10px; text-align: center; font-size: 12px; color: var(--ink-3); line-height: 1.7; }
+  .pay-note { margin: 32px auto 0; max-width: 760px; font-size: 13px; color: var(--ink-2); line-height: 1.9; }
+  .pay-note li { padding-left: 1em; text-indent: -1em; }
+  .pay-note li::before { content: "・"; }
 
-  /* 9 FAQ */
-  .faq { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
-  .faq details { background: var(--surface); border-radius: 16px; border: 1px solid var(--line); }
-  .faq details[open] { box-shadow: var(--shadow); }
-  .faq summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 24px 1fr 14px; gap: 14px; align-items: start; padding: 20px 22px; font-weight: 700; line-height: 1.7; }
+  /* 8 FAQ */
+  .faq { margin-top: 36px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 24px 1fr 14px; gap: 14px; align-items: start; padding: 20px 2px; font-weight: 700; line-height: 1.7; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq .q, .faq .a { font: 500 20px/1.3 var(--en); color: var(--accent); }
+  .faq .q, .faq .a { font: 500 19px/1.35 var(--en); color: var(--pink-text); }
   .faq .pm { position: relative; width: 14px; height: 14px; margin-top: 7px; }
   .faq .pm::before, .faq .pm::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 1.5px; background: var(--ink-3); transition: transform .25s var(--ease); }
   .faq .pm::after { transform: rotate(90deg); }
   .faq details[open] .pm::after { transform: rotate(0); }
-  .faq .ans { display: grid; grid-template-columns: 24px 1fr; gap: 14px; padding: 0 22px 22px; font-size: 15px; color: var(--ink-2); }
+  .faq .ans { display: grid; grid-template-columns: 24px 1fr; gap: 14px; padding: 0 2px 22px; font-size: 15px; color: var(--ink-2); }
 
-  /* 10 最後 */
-  .final { text-align: center; padding-block: 96px; background: linear-gradient(180deg, var(--bg), var(--tint)); }
-  .final h2 { font-family: var(--round); font-size: clamp(24px, 3.6vw, 34px); line-height: 1.6; letter-spacing: .08em; margin-bottom: 18px; }
-  .final p { color: var(--ink-2); }
-  .final-actions { display: grid; gap: 14px; justify-items: center; margin-top: 36px; }
-  .final .line-link { font-size: 14px; color: var(--ink-2); }
-  .final .line-link a { color: var(--accent); font-weight: 700; }
+  /* 9 最後 */
+  .final { text-align: center; background: var(--paper); }
+  .final h2 { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.6; font-weight: 900; letter-spacing: .05em; }
+  .final p { margin-top: 14px; color: var(--ink-2); }
+  .final-actions { display: grid; gap: 16px; justify-items: center; margin-top: 32px; }
+  .final .line { font-size: 14px; color: var(--ink-2); }
+  .final .line a { color: var(--main); font-weight: 700; }
 
-  .footer { padding-block: 32px 120px; text-align: center; font-size: 12px; color: var(--ink-3); letter-spacing: .06em; border-top: 1px solid var(--line); }
+  .footer { padding-block: 32px 120px; text-align: center; font-size: 12px; color: var(--ink-3); border-top: 1px solid var(--line); }
   @media (min-width: 768px) { .footer { padding-bottom: 40px; } }
 
-  .fixed { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(248,247,244,.96); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .3s var(--ease); }
+  .fixed { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(250,248,245,.96); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .3s var(--ease); }
   .fixed.on { transform: none; }
-  .fixed .btn { width: 100%; min-height: 52px; box-shadow: none; }
+  .fixed .btn { width: 100%; min-height: 52px; }
   @media (min-width: 768px) { .fixed { display: none; } }
 
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
@@ -347,26 +265,18 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></symbol>
   <symbol id="i-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
   <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="12" x2="18" y2="12"/></symbol>
-  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
-  <symbol id="i-pair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20a5 5 0 0 1 10 0"/><path d="M11 20a5 5 0 0 1 10 0"/></symbol>
-  <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
-  <symbol id="i-me" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
-  <symbol id="i-ear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></symbol>
-  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
-  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
-  <symbol id="i-case" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-3 3V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2z"/><path d="M18 9h1a2 2 0 0 1 2 2v10l-3-3h-6a2 2 0 0 1-2-2v-1"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
 </defs></svg>
 
 <header class="header">
   <div class="wrap header-in">
     <a class="logo" href="#top" aria-label="ComuMee トップへ"><b>ComuMee</b><small>コミュミー</small></a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#scenes">こんな場面に</a><a href="#standard">スタンダードで学べること</a><a href="#skinship">スキンシップ</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
+      <a href="#themes">学べるテーマ</a><a href="#standard">スタンダード</a><a href="#sex">セックスのこと</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
     </nav>
-    <a class="btn btn-main" href="#pricing">料金を見る</a>
+    <a class="btn btn-sub" href="#pricing">プランと料金</a>
   </div>
 </header>
 
@@ -375,263 +285,174 @@
   <section class="fv" id="top" aria-labelledby="fv-title">
     <div class="wrap fv-grid">
       <figure class="fv-photo">
-        <img src="https://images.pexels.com/photos/8582533/pexels-photo-8582533.jpeg?auto=compress&cs=tinysrgb&w=1200" width="1200" height="800" alt="手をつないで歩きながら、顔を見合わせて話している大人のカップル" fetchpriority="high">
-        <figcaption>会話から、スキンシップまで</figcaption>
+        <img src="https://images.pexels.com/photos/8582533/pexels-photo-8582533.jpeg?auto=compress&cs=tinysrgb&w=1400" width="1400" height="933" alt="手をつないで歩きながら、顔を見合わせて話している大人のカップル" fetchpriority="high">
       </figure>
       <div>
-        <p class="fv-kind">恋愛・パートナーシップのオンラインスクール<span class="fv-badge">0期生 募集中</span></p>
+        <p class="fv-kicker">大人のための、関わり方の動画スクール</p>
         <h1 id="fv-title"><span class="nw">好きな人と、</span><br><span class="nw">本音で<span class="mk">話したい。</span></span></h1>
-        <p class="fv-lead">会話も、スキンシップも、自分の気持ちを伝えながら、相手の気持ちを聞くコツが学べます。</p>
-        <ul class="fv-facts" aria-label="ComuMee の特徴">
-          <li>会話からスキンシップまで</li><li>男女どちらも</li><li>月7,800円から(税抜)</li>
-        </ul>
-        <a class="btn btn-main btn-wide" href="#pricing">プランと料金を見る<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="fv-sub"><span class="ph">会話も、恋愛も、</span><span class="ph">ふたりの身体の触れ合いも。</span></p>
+        <p class="fv-desc">男女の違いや、一人ひとりの感じ方を学べます。パートナーがいても、いなくても、一人で動画で受講できます。</p>
+        <div class="fv-actions">
+          <a class="btn btn-main" href="#themes">学べるテーマを見る<svg aria-hidden="true"><use href="#i-down"/></svg></a>
+          <a class="text-link" href="#pricing">プランと料金<svg aria-hidden="true" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2 こんな場面、ありませんか -->
-  <section class="sec bg-white" id="scenes" aria-labelledby="scenes-title">
+  <!-- 2 一つのすれ違いを、両方の立場から -->
+  <section class="sec" aria-labelledby="gap-title" style="padding-top:24px">
     <div class="wrap">
-      <div class="head center">
-        <p class="eyebrow">Scenes</p>
-        <h2 id="scenes-title">こんな場面、<span class="nw">ありませんか？</span></h2>
+      <div class="gap-head">
+        <p class="eyebrow">One scene</p>
+        <h2 class="h2" id="gap-title">同じ帰り道で、<br><span class="nw">気持ちはすれ違う。</span></h2>
+        <p class="gap-scene">デートの帰り、駅の改札の前で。</p>
       </div>
-      <div class="scenes">
-        <article class="scene">
-          <p class="scene-who"><svg aria-hidden="true"><use href="#i-spark"/></svg>気になる人と</p>
-          <p><q>また会いたい</q>と伝えたいのに、相手からの連絡を待ってしまう。</p>
-          <p class="scene-2">2回目に誘いたいけれど、断られるのが怖くて切り出せない。</p>
-        </article>
-        <article class="scene">
-          <p class="scene-who"><svg aria-hidden="true"><use href="#i-pair"/></svg>付き合っている人と</p>
-          <p><q>もう少し二人で過ごしたい</q>と言えず、つい<q>大丈夫</q>と返してしまう。</p>
-          <p class="scene-2">相手が不機嫌な理由がわからず、とりあえず<q>ごめん</q>で終わらせてしまう。</p>
-        </article>
-        <article class="scene">
-          <p class="scene-who"><svg aria-hidden="true"><use href="#i-hand"/></svg>スキンシップで</p>
-          <p><q>こうしてくれるとうれしい</q><q>今日はここまでがいい</q>と思っても、雰囲気を壊しそうで言い出せない。</p>
-          <p class="scene-2">触れたいけれど、嫌がられていないか不安で、自分から動けない。</p>
-        </article>
+      <div class="gap-pair">
+        <div class="gap-side">
+          <p class="who">A</p>
+          <q><span class="ph">会いたかったから、</span><span class="ph">もう少し一緒にいたかった。</span></q>
+          <p>「もう帰るの？」と言いかけて、やめた。</p>
+        </div>
+        <div class="gap-side">
+          <p class="who">B</p>
+          <q><span class="ph">疲れていそうだから、</span><span class="ph">早めに帰したほうがいいと思った。</span></q>
+          <p>気をつかったつもりが、少しそっけなく見えたかもしれない。</p>
+        </div>
       </div>
-      <p class="scenes-foot">どれも、気持ちがないわけではありません。<br><span class="ph">伝え方と聞き方を、</span><span class="ph">まだ練習していないだけです。</span></p>
+      <div class="gap-msg">
+        <h3><span class="ph">どちらも、</span><span class="ph">相手を思っていました。</span></h3>
+        <p>男女の違いを知るのは、「男性はこう」「女性はこう」と決めつけるためではありません。目の前の相手がどう感じているかを、確かめるきっかけにするためです。</p>
+      </div>
     </div>
   </section>
 
-  <!-- 3 ゴールは恋人だけじゃない -->
-  <section class="sec" aria-labelledby="goal-title">
-    <div class="wrap">
-      <div class="head center">
-        <p class="eyebrow">About</p>
-        <h2 id="goal-title">恋人をつくることだけが、<br><span class="nw">ゴールではありません。</span></h2>
-        <p>これから出会いたい人も、付き合っている人も、長く一緒にいる人も。ComuMee では、二人がお互いに心地よくいるための話し方を、会話からスキンシップまで一続きで学びます。</p>
+  <!-- 3 学べるテーマ -->
+  <section class="sec themes-bg" id="themes" aria-labelledby="themes-title">
+    <div class="wrap themes-grid">
+      <div class="themes-intro">
+        <p class="eyebrow">Themes</p>
+        <h2 class="h2" id="themes-title">誰に聞けばいいか<br><span class="nw">分からなかったことを、</span><br><span class="nw">順番に。</span></h2>
+        <p class="lead">日常の会話から、付き合ったあと、結婚したあとのことまで。人との関わり方を、一続きで学びます。</p>
       </div>
-      <ol class="route" aria-label="ComuMee で学べる流れ">
-        <li><b>日常の会話</b><small>聞く・伝える</small></li>
-        <li><b>出会い・恋愛</b><small>誘う・距離を縮める</small></li>
-        <li><b>パートナーシップ</b><small>すれ違いを話し合う</small></li>
-        <li class="sk"><b>スキンシップ</b><small>希望と境界線を伝え合う</small></li>
-      </ol>
-      <div class="head center" style="margin-bottom:28px">
+      <div>
+        <ol class="flow">
+          <li><span class="num">01</span><div><h3>日常の会話 <span class="tag">ライトから</span></h3><p>話を聞く・広げる・伝える。気持ちを汲み取る基本。</p></div></li>
+          <li><span class="num">02</span><div><h3><span class="ph">男女の違いと、</span><span class="ph">一人ひとりの感じ方</span> <span class="tag std">スタンダードから</span></h3><p>違いを知ったうえで、目の前の相手に確かめる。</p></div></li>
+          <li><span class="num">03</span><div><h3>恋愛 <span class="tag std">スタンダードから</span></h3><p>出会ってから、距離を縮めて、交際が始まるまで。</p></div></li>
+          <li><span class="num">04</span><div><h3>交際・結婚後のすれ違い <span class="tag std">スタンダードから</span></h3><p>なぜすれ違ったのか。次はどう伝えるか。</p></div></li>
+          <li class="sex"><span class="num">05</span><div><h3>スキンシップとセックス <span class="tag pre">プレミアム</span></h3><p>自分はどう感じるか。違ったときに、どう伝え合うか。</p></div></li>
+        </ol>
+        <p class="note themes-foot">動画は1本7〜15分。基本は一人で、自分のペースで見進めます。</p>
       </div>
-      <div class="goals">
-        <article class="goal"><div class="goal-ic"><svg aria-hidden="true"><use href="#i-me"/></svg></div><div><h3>自分の希望を知る</h3><p>「もっと会いたい」「ひとりの時間もほしい」。言う前に、自分が何を望んでいるのかを整理します。</p></div></article>
-        <article class="goal"><div class="goal-ic"><svg aria-hidden="true"><use href="#i-ear"/></svg></div><div><h3>相手の希望を聞く</h3><p>決めつけずに、相手がどうしたいかを聞く。聞き方ひとつで、返ってくる言葉が変わります。</p></div></article>
-        <article class="goal"><div class="goal-ic"><svg aria-hidden="true"><use href="#i-scale"/></svg></div><div><h3>二人に合う距離感を話し合う</h3><p>連絡の頻度、会うペース、触れ合い方。正解はひとつではないから、二人で決めていきます。</p></div></article>
-      </div>
-
-      <div class="matrix-wrap">
-        <table class="matrix">
-          <caption>プランごとに学べること</caption>
-          <thead><tr><th scope="col"><span class="sr">教材</span></th><th scope="col">ライト</th><th scope="col" class="std">スタンダード</th><th scope="col">プレミアム</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">コミュニケーション<small>聞く・広げる・伝える基本</small></th><td><span class="yes" aria-label="学べる">✓</span></td><td class="std"><span class="yes" aria-label="学べる">✓</span></td><td><span class="yes" aria-label="学べる">✓</span></td></tr>
-            <tr><th scope="row">恋愛・パートナーシップ<small>出会いから、長く続く関係まで</small></th><td><span class="no" aria-label="対象外">—</span></td><td class="std"><span class="yes" aria-label="学べる">✓</span></td><td><span class="yes" aria-label="学べる">✓</span></td></tr>
-            <tr><th scope="row">ケーススタディ<small>実際の会話に当てはめて考える</small></th><td><span class="no" aria-label="対象外">—</span></td><td class="std"><span class="yes" aria-label="学べる">✓</span></td><td><span class="yes" aria-label="学べる">✓</span></td></tr>
-            <tr><th scope="row">スキンシップ<small>心地よい距離や触れ方、希望や境界線</small></th><td><span class="no" aria-label="対象外">—</span></td><td class="std"><span class="no" aria-label="対象外">—</span></td><td><span class="yes" aria-label="学べる">✓</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="future"><b>これから追加予定:</b> 子育て・家族/ビジネス/自己理解。出会いのときも、一緒に暮らしてからも、学び続けられる場所を目指しています。</p>
     </div>
   </section>
 
-  <!-- 4 スタンダードで学べること -->
-  <section class="sec bg-tint" id="standard" aria-labelledby="std-title">
+  <!-- 4 スタンダード -->
+  <section class="sec" id="standard" aria-labelledby="std-title">
     <div class="wrap">
       <div class="std-grid">
-        <figure class="std-photo"><img src="https://images.pexels.com/photos/7671356/pexels-photo-7671356.jpeg?auto=compress&cs=tinysrgb&w=1000" width="1000" height="667" alt="自宅のソファで向き合って話す二人" loading="lazy"></figure>
+        <figure class="std-photo"><img src="https://images.pexels.com/photos/7671356/pexels-photo-7671356.jpeg?auto=compress&cs=tinysrgb&w=1100" width="1100" height="733" alt="自宅のソファで向き合って話す二人" loading="lazy"></figure>
         <div>
-          <div class="head">
-            <p class="eyebrow">Standard</p>
-            <h2 id="std-title">スタンダードで、<br><span class="nw">学べること</span></h2>
-            <p>いちばんのおすすめです。毎日の会話に加えて、恋愛・パートナーシップまで。出会ったばかりの人とも、長く一緒にいる人とも使える話し方を学びます。</p>
-          </div>
-          <ul class="points">
-            <li class="point"><div class="point-ic"><svg aria-hidden="true"><use href="#i-book"/></svg></div><div><h3>会話の基本＋恋愛・パートナーシップ</h3><p>聞く・伝える基本(ライトの教材すべて)に加えて、出会い、交際、交際後の関係づくりまで学べます。</p></div></li>
-            <li class="point"><div class="point-ic"><svg aria-hidden="true"><use href="#i-case"/></svg></div><div><h3>ケーススタディで、自分ならどう言うか</h3><p>理解編で考え方を知り、ケーススタディ編で実際の会話に当てはめて考えます。</p></div></li>
-            <li class="point"><div class="point-ic"><svg aria-hidden="true"><use href="#i-cal"/></svg></div><div><h3>2ヶ月に1回のオンライン勉強会</h3><p>動画で学んだことを、ほかの受講生と一緒に考える時間です。</p></div></li>
+          <p class="eyebrow">Standard</p>
+          <h2 class="h2" id="std-title">いちばんのおすすめは、<br><span class="nw">スタンダード。</span></h2>
+          <p class="lead">会話の基本に加えて、恋愛・パートナーシップまで。付き合ったあと、結婚したあとにどうしたらいいか分からない。その悩みまで扱います。</p>
+          <ul class="for-you">
+            <li><b>出会ったばかりの人と</b><span>どう距離を縮めるか</span></li>
+            <li><b>交際中・結婚している人と</b><span>なぜすれ違ったのか、次はどう伝えるか</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="talk" aria-labelledby="talk-title">
-        <div class="talk-head"><span class="ex-tag">たとえば</span><h3 id="talk-title">連絡が少なくて、不安になったとき</h3></div>
-        <div class="talk-flow">
-          <div class="bubble before"><small>つい言いそうになる</small><p>「なんで連絡くれないの？」</p></div>
-          <div class="talk-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
-          <div class="bubble after"><small>こう聞いてみる</small><p><span class="ph">「私は次に会う予定が</span><span class="ph">分かると安心するんだけど、</span><span class="ph">どのくらいの頻度なら</span><span class="ph">無理なく連絡できそう？」</span></p></div>
+      <div class="how" aria-labelledby="how-title">
+        <h3 id="how-title">理解編で知って、ケーススタディ編で考える。</h3>
+        <p class="note">下は、学び方を説明するための例です。実際の講義名や画面ではありません。</p>
+        <div class="how-steps">
+          <div>
+            <p class="step-label">理解編</p>
+            <h4>なぜ、同じ場面で感じ方が違うのか</h4>
+            <p>先ほどの帰り道のように、すれ違いが起きる理由を知ります。どちらが悪いかではなく、何が違ったのかを見つけます。</p>
+          </div>
+          <div>
+            <p class="step-label">ケーススタディ編</p>
+            <h4>自分なら、どう言うか</h4>
+            <p><span class="ex">たとえば</span> 帰り道の場面なら、こんな一言が考えられます。</p>
+            <div class="says">
+              <p class="say"><small>A の立場なら</small><span class="ph">「今日、楽しかった。</span><span class="ph">もう少し一緒にいたかったな。</span><span class="ph">疲れてない？」</span></p>
+              <p class="say"><small>B の立場なら</small><span class="ph">「疲れてるように見えたから</span><span class="ph">早めに帰ろうと思ったんだけど、</span><span class="ph">もう少しいたかった？」</span></p>
+            </div>
+          </div>
         </div>
-        <p class="talk-why">責める言葉の代わりに、「自分は何があると安心か」と「相手はどこまでならできるか」を、両方とも言葉にします。スタンダードでは、こうした言い換えを場面ごとに考えます。</p>
-        <div class="talk-head talk-2"><span class="ex-tag">たとえば</span><h3>相手が不機嫌で、理由がわからないとき</h3></div>
-        <div class="talk-flow">
-          <div class="bubble before"><small>つい言いそうになる</small><p>「なんで怒ってるの？」</p></div>
-          <div class="talk-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
-          <div class="bubble after"><small>こう聞いてみる</small><p><span class="ph">「さっきから元気がないように見えるけど、</span><span class="ph">何か気になってた？</span><span class="ph">よかったら聞かせてほしい」</span></p></div>
-        </div>
-        <p class="talk-why">理由を問いただすのではなく、気づいたことを伝えてから、話しやすい聞き方をします。とりあえず謝るより、相手は本音を話しやすくなります。</p>
+        <div class="study"><b>2ヶ月に1回、オンライン勉強会</b><span>動画で学んだことを、ほかの受講生と一緒に考える時間があります。</span></div>
+        <div class="std-cta"><a class="btn btn-main" href="#plan-standard">スタンダードの料金を見る<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
       </div>
-
-      <div class="minis">
-        <article class="mini">
-          <p class="scene-who"><svg aria-hidden="true"><use href="#i-spark"/></svg>出会ったばかりの人と</p>
-          <h4>質問ばかりで、面接みたいになる。</h4>
-          <p><span class="ex-tag">たとえば</span> 「休日は映画を観ます」と聞いたら、すぐ次の質問へ行かずに<b>「私も映画好きです。最近よかったの、あります？」</b>と自分の話も少し添える。</p>
-        </article>
-        <article class="mini">
-          <p class="scene-who"><svg aria-hidden="true"><use href="#i-pair"/></svg>長く一緒にいる人と</p>
-          <h4>「どっちでもいいよ」と言ったあとで疲れる。</h4>
-          <p><span class="ex-tag">たとえば</span> 本当はひとりで休みたいなら、<b>「土曜はゆっくりして、日曜に会いたいな」</b>と、自分の希望も相手の都合も大切にして伝える。</p>
-        </article>
-      </div>
-      <p class="note center" style="margin-top:16px">※ 会話例は説明のために作ったものです。実在する受講生の事例ではありません。</p>
-      <div class="center" style="margin-top:36px"><a class="btn btn-main btn-wide" href="#plan-standard">スタンダードの料金を見る<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </section>
 
-  <!-- 5 スキンシップ(強調) -->
-  <section class="sec sk-band" id="skinship" aria-labelledby="sk-title">
+  <!-- 5 セックスのこと(プレミアム) -->
+  <section class="sec sex" id="sex" aria-labelledby="sex-title">
     <div class="wrap">
-      <div class="sk-top">
-        <div>
-          <p class="eyebrow">Skinship</p>
-          <h2 id="sk-title"><span class="nw">スキンシップまで、</span><br><span class="nw">学べる。</span></h2>
-          <p class="sk-lead">スキンシップも、普段の会話の延長線。相手を知り、反応を見て、気持ちを伝え合う。その先に、安心して触れ合える関係があります。セックスのことも含めて、言い出しにくいテーマだからこそ、誘う側と答える側の両方の言い方を練習します。</p>
-          <span class="plan-flag">プレミアムで学べます</span>
-        </div>
-        <figure class="sk-photo"><img src="https://images.pexels.com/photos/5807642/pexels-photo-5807642.jpeg?auto=compress&cs=tinysrgb&w=900" width="900" height="1350" alt="やさしく手をつなぐ二人の手元" loading="lazy"></figure>
+      <div class="sex-head">
+        <p class="eyebrow">Premium</p>
+        <h2 class="h2" id="sex-title">セックスのことも、<br><span class="nw">ふたりで話せるように。</span></h2>
+        <p class="lead">身体の触れ合いも、普段の会話の延長です。会話と同じ三つの視点で、言いにくいことを言葉にする練習をします。</p>
+        <p class="views" aria-label="三つの視点"><span>自分はどう感じるか</span><i>／</i><span>相手はどう感じているか</span><i>／</i><span>違ったとき、どう伝え合うか</span></p>
       </div>
-      <div class="sk-pair">
-        <article class="sk-card">
-          <h3>手をつなぎたいとき、<br>どう聞く？</h3>
-          <p><span class="ex-tag">たとえば</span></p>
-          <p class="say"><span class="ph">「手、</span><span class="ph">つないでもいい？」</span></p>
-          <p class="sk-sub">断られても、気まずくしない返し方まで考えます。</p>
-        </article>
-        <article class="sk-card">
-          <h3>気が進まないとき、<br>どう伝える？</h3>
-          <p><span class="ex-tag">たとえば</span></p>
-          <p class="say"><span class="ph">「今日はここまでがいいな。</span><span class="ph">嫌なわけじゃないよ」</span></p>
-          <p class="sk-sub">相手を否定せずに、自分の気持ちを伝える言い方を考えます。</p>
-        </article>
-      </div>
-      <ul class="sk-topics" aria-label="スキンシップ教材で扱うこと">
-        <li><b>誘い方・聞き方</b><span>自分から触れたいときの、確かめ方</span></li>
-        <li><b>断り方・境界線</b><span>今日はここまで、を角を立てずに</span></li>
-        <li><b>希望の伝え方</b><span>「こうしてくれるとうれしい」を言葉に</span></li>
-        <li><b>心地よい距離や触れ方</b><span>二人に合うペースを話し合う</span></li>
+      <ol class="topics">
+        <li class="topic"><span class="no">1</span><h3>「今日はしたくない。<br>断ったら嫌われるかな？」</h3><p>断る側の不安と、断られた側の気持ち。両方の立場から、関係を傷つけない伝え方と受け止め方を考えます。</p></li>
+        <li class="topic"><span class="no">2</span><h3>自分にはない身体のことを、知る。</h3><p>男性器・女性器への触れ方と、何が心地よいかを相手に確かめる方法を学びます。</p></li>
+        <li class="topic"><span class="no">3</span><h3>身体は近いのに、<br>寂しさが残るとき。</h3><p>自分は本当は何を望んでいるのか。心も身体も満たされるセックスについて考えます。</p></li>
+      </ol>
+      <div class="premium-only"><span class="pill">プレミアムで受講できます</span><p>この教材は、ライト・スタンダードには含まれません。</p></div>
+    </div>
+  </section>
+
+  <!-- 6 これからのコミュミー -->
+  <section class="sec" aria-labelledby="future-title">
+    <div class="wrap narrow">
+      <p class="eyebrow">Next</p>
+      <h2 class="h2" id="future-title">これからのコミュミー</h2>
+      <p class="lead">恋愛やパートナーシップの外でも、関わり方の悩みは続きます。今後、次のテーマを追加していく予定です。</p>
+      <ul class="future-list">
+        <li><b>自己理解・自己肯定感</b><span>自分は本当はどうしたいのかを知る。</span></li>
+        <li><b>子育て</b><span>子どもの話を、途中で決めつけずに聞く。</span></li>
+        <li><b>ビジネス</b><span>意見が違う同僚に、自分の考えを伝える。</span></li>
       </ul>
+      <p class="note future-note">※ これらは今後追加予定のテーマで、現在は受講できません。いま受講できるのは、上で紹介した講座です。</p>
     </div>
   </section>
 
-  <!-- 6 受講後に試せること -->
-  <section class="sec" aria-labelledby="try-title">
+  <!-- 7 料金 -->
+  <section class="sec pricing" id="pricing" data-billing="month" aria-labelledby="price-title">
     <div class="wrap">
-      <div class="head center">
-        <p class="eyebrow">Try</p>
-        <h2 id="try-title">次に会ったとき、<br><span class="nw">試せること</span></h2>
-        <p>大きく変わる必要はありません。一言だけ、いつもと違う言い方をしてみるところから始めます。</p>
-      </div>
-      <div class="tries">
-        <article class="try"><p class="scene-who"><svg aria-hidden="true"><use href="#i-spark"/></svg>気になる人と</p><p class="say"><span class="ph">「今日楽しかった。</span><span class="ph">来週の土曜、</span><span class="ph">話してたお店に行かない？」</span><span class="ph">と、</span><span class="ph">自分から具体的に誘ってみる。</span></p><span class="plan-mini">ライトから</span></article>
-        <article class="try"><p class="scene-who"><svg aria-hidden="true"><use href="#i-pair"/></svg>付き合っている人と</p><p class="say"><span class="ph">「大丈夫」</span><span class="ph">の代わりに、</span><span class="ph">「本当は少し寂しかった。</span><span class="ph">今週どこかで二人の時間がほしい」</span><span class="ph">と落ち着いて伝える。</span></p><span class="plan-mini">スタンダードから</span></article>
-        <article class="try"><p class="scene-who"><svg aria-hidden="true"><use href="#i-scale"/></svg>長く一緒にいる人と</p><p class="say"><span class="ph">相手が不機嫌なとき、</span><span class="ph">「ごめん」</span><span class="ph">で終わらせずに「何か気になってた？」</span><span class="ph">と聞いて、</span><span class="ph">最後まで話を聞く。</span></p><span class="plan-mini">スタンダードから</span></article>
-        <article class="try"><p class="scene-who"><svg aria-hidden="true"><use href="#i-hand"/></svg>スキンシップで</p><p class="say"><span class="ph">「触れてもいい？」</span><span class="ph">と聞いて、</span><span class="ph">相手の返事を大切にする。</span><span class="ph">自分の「こうしてくれるとうれしい」</span><span class="ph">も言葉にする。</span></p><span class="plan-mini">プレミアム</span></article>
-      </div>
-      <p class="note center" style="margin-top:16px">※ 例として作った言い方です。受講による結果を約束するものではありません。</p>
-    </div>
-  </section>
-
-  <!-- 7 比較 -->
-  <section class="sec bg-white" aria-labelledby="cmp-title">
-    <div class="wrap">
-      <div class="head center">
-        <p class="eyebrow">Compare</p>
-        <h2 id="cmp-title">ほかのサービスとの違い</h2>
-        <p><span class="ph">出会いを増やすサービスとは別に、</span><span class="ph">出会ったあとの話し方を続けて学べます。</span></p>
-      </div>
-      <p class="scroll-hint" aria-hidden="true">横にスクロールして比べられます →</p>
-      <div class="cmp-wrap" tabindex="0" role="region" aria-label="ほかのサービスとの比較表">
-        <table class="cmp">
-          <thead><tr><th scope="col"><span class="sr">比べる項目</span></th><th scope="col" class="us">ComuMee</th><th scope="col">マッチングアプリ</th><th scope="col">恋愛コンサル</th><th scope="col">結婚相談所</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">交際後の<br>関係づくり</th>
-              <td class="us"><span class="mark great" role="img" aria-label="とても良い">◎</span><span class="ph">交際後も、</span><span class="ph">続けて学べる</span></td>
-              <td><span class="mark bad" role="img" aria-label="対象外">×</span><span class="ph">サポートの対象外。</span><span class="ph">出会ったあとは、</span><span class="ph">自分で考えることに</span></td>
-              <td><span class="mark mid" role="img" aria-label="一部のみ">△</span><span class="ph">契約期間内のみ。</span><span class="ph">続けるには、</span><span class="ph">追加の費用がかかる</span></td>
-              <td><span class="mark mid" role="img" aria-label="一部のみ">△</span><span class="ph">成婚・交際成立まで。</span><span class="ph">その先は、</span><span class="ph">別に学ぶ必要がある</span></td></tr>
-            <tr><th scope="row">得意なこと</th>
-              <td class="us"><span class="ph">会話から、</span><span class="ph">恋愛・パートナーシップ、</span><span class="ph">スキンシップまで</span></td>
-              <td><span class="ph">出会いの機会を、</span><span class="ph">増やす</span></td>
-              <td><span class="ph">個別の悩みに、</span><span class="ph">手厚くアドバイス</span></td>
-              <td><span class="ph">結婚を前提にした、</span><span class="ph">出会いと活動の支援</span></td></tr>
-            <tr><th scope="row">費用の目安</th>
-              <td class="us"><b class="big">月7,800円〜</b><small>(税抜)</small></td>
-              <td><span class="nw">月4,000〜</span><span class="nw">10,000円程度</span></td>
-              <td><span class="nw">数十万円〜</span><span class="nw">200万円以上も</span></td>
-              <td><span class="nw">1年で50〜</span><span class="nw">100万円以上も</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note center" style="margin-top:14px">※ スキンシップ教材はプレミアムで学べます。アプリや結婚相談所と並行して受講することもできます。</p>
-    </div>
-  </section>
-
-  <!-- 8 料金 -->
-  <section class="sec bg-sand" id="pricing" data-billing="month" aria-labelledby="price-title">
-    <div class="wrap">
-      <div class="head center" style="margin-bottom:28px">
+      <div class="price-head">
         <p class="eyebrow">Price</p>
-        <h2 id="price-title">プランと料金</h2>
-        <p>出会う前の人も、付き合っている人も、長く一緒にいる人も。<br><span class="ph">学びたいテーマに合わせて選べます。</span></p>
-      </div>
-      <div class="center">
+        <h2 class="h2" id="price-title">プランと料金</h2>
         <div class="billing" role="group" aria-label="支払い方法の切りかえ">
           <button type="button" data-set="month" aria-pressed="true">月払い<small>毎月お支払い</small></button>
           <button type="button" data-set="year" aria-pressed="false">年払い<small>1〜3ヶ月分お得</small></button>
         </div>
+        <p class="tax">表示価格はすべて税抜です。</p>
       </div>
-      <p class="tax"><b>表示価格はすべて税抜です。</b>月払い・年払いは、申込み画面でも選べます。</p>
 
       <div class="plans">
         <article class="plan" id="plan-light" aria-labelledby="pl-light">
           <p class="plan-en">LIGHT</p>
           <h3 id="pl-light">ライト</h3>
-          <p class="plan-for">まずは毎日の会話から</p>
+          <p class="plan-for">まずは日常の会話から</p>
           <div class="price">
             <div class="p-month"><span class="lab">月払い</span><br><b>7,800</b><span class="unit">円/月</span><span class="alt">年払いなら 85,800円/年(1ヶ月分お得)</span></div>
             <div class="p-year"><span class="lab">年払い</span><br><b>85,800</b><span class="unit">円/年</span><br><span class="save">月払いより1ヶ月分お得</span><span class="alt">月払いなら 7,800円/月</span></div>
           </div>
           <p class="renew p-month">毎月のお支払いです</p>
-          <p class="renew p-year"><span class="ph">年額を一括でお支払い。</span><span class="ph">以後、毎年自動更新</span></p>
+          <p class="renew p-year"><span class="ph">1年分を一括でお支払い。</span><span class="ph">以後も毎年自動更新</span></p>
           <ul>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>コミュニケーションの動画教材</span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>話を聞く・広げる・伝える基本を、自分のペースで</span></li>
-            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>恋愛・パートナーシップ教材</span></li>
-            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ教材</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>日常の会話(コミュニケーションの基本)</span></li>
+            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>恋愛・パートナーシップ</span></li>
+            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ・セックスの教材</span></li>
           </ul>
           <a class="btn btn-sub" href="https://utage-system.com/p/qsAQ0HdhpYFN">ライトの申込みへ</a>
-          <p class="choose">月払い・年払いは次の申込み画面で選べます</p>
+          <p class="check">月払い・年払いの選択と、税込のお支払い額は申込み画面で確認できます</p>
         </article>
 
         <article class="plan pick" id="plan-standard" aria-labelledby="pl-std">
@@ -644,90 +465,81 @@
             <div class="p-year"><span class="lab">年払い</span><br><b>148,000</b><span class="unit">円/年</span><br><span class="save">月払いより2ヶ月分お得</span><span class="alt">月払いなら 14,800円/月</span></div>
           </div>
           <p class="renew p-month">毎月のお支払いです</p>
-          <p class="renew p-year"><span class="ph">年額を一括でお支払い。</span><span class="ph">以後、毎年自動更新</span></p>
+          <p class="renew p-year"><span class="ph">1年分を一括でお支払い。</span><span class="ph">以後も毎年自動更新</span></p>
           <ul>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>ライトのコミュニケーション教材すべて</span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>恋愛・パートナーシップ教材</span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>理解編とケーススタディ編で、実際の会話に当てはめる</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>コミュニケーションの基本</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>恋愛・パートナーシップ</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>理解編とケーススタディ編</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>2ヶ月に1回のオンライン勉強会</span></li>
-            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ教材<span class="tag">プレミアムで学べます</span></span></li>
+            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ・セックスの教材(プレミアムのみ)</span></li>
           </ul>
           <a class="btn btn-main" href="https://utage-system.com/p/u60dFvZW0aIJ">スタンダードの申込みへ<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <p class="choose">月払い・年払いは次の申込み画面で選べます</p>
+          <p class="check">月払い・年払いの選択と、税込のお支払い額は申込み画面で確認できます</p>
         </article>
 
         <article class="plan" id="plan-premium" aria-labelledby="pl-pre">
           <p class="plan-en">PREMIUM</p>
           <h3 id="pl-pre">プレミアム</h3>
-          <p class="plan-for">親密さについても、安心して話したい方へ</p>
+          <p class="plan-for">セックスのことまで、学びたい方に</p>
           <div class="price">
             <div class="p-month"><span class="lab">月払い</span><br><b>39,800</b><span class="unit">円/月</span><span class="alt">年払いなら 358,200円/年(3ヶ月分お得)</span></div>
             <div class="p-year"><span class="lab">年払い</span><br><b>358,200</b><span class="unit">円/年</span><br><span class="save">月払いより3ヶ月分お得</span><span class="alt">月払いなら 39,800円/月</span></div>
           </div>
           <p class="renew p-month">毎月のお支払いです</p>
-          <p class="renew p-year"><span class="ph">年額を一括でお支払い。</span><span class="ph">以後、毎年自動更新</span></p>
+          <p class="renew p-year"><span class="ph">1年分を一括でお支払い。</span><span class="ph">以後も毎年自動更新</span></p>
           <ul>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>スタンダードの動画教材すべて</span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>スキンシップ教材<span class="tag">プレミアムで学べます</span></span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>心地よい距離や触れ方、希望や境界線を伝える練習</span></li>
+            <li class="sex-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>スキンシップ・セックスの教材</b>(プレミアムのみ)</span></li>
           </ul>
           <a class="btn btn-sub" href="https://utage-system.com/p/qrEQbAJV1mqM">プレミアムの申込みへ</a>
-          <p class="choose">月払い・年払いは次の申込み画面で選べます</p>
+          <p class="check">月払い・年払いの選択と、税込のお支払い額は申込み画面で確認できます</p>
         </article>
       </div>
 
-      <div class="pay-note">
-        <ul>
-          <li>表示価格はすべて税抜です。申込み画面では、消費税を含むお支払い額が表示されます。</li>
-          <li>月払いは毎月のお支払い、年払いは1年分を一括でお支払いいただき、毎年自動更新されます。</li>
-          <li>解約は会員サイトのお支払い画面から、プラン変更は公式LINEからお手続きいただけます。</li>
-        </ul>
-      </div>
+      <ul class="pay-note">
+        <li>月払いは毎月のお支払いです。年払いは1年分を一括でお支払いいただき、以後も毎年自動更新されます。</li>
+        <li>解約は会員サイトのお支払い画面から、プラン変更は公式LINEからお手続きいただけます。</li>
+      </ul>
     </div>
   </section>
 
-  <!-- 9 FAQ -->
+  <!-- 8 よくある質問 -->
   <section class="sec" id="faq" aria-labelledby="faq-title">
-    <div class="wrap">
-      <div class="head center">
-        <p class="eyebrow">Q&amp;A</p>
-        <h2 id="faq-title">よくある質問</h2>
-      </div>
+    <div class="wrap narrow">
+      <p class="eyebrow">Q&amp;A</p>
+      <h2 class="h2" id="faq-title">よくある質問</h2>
       <div class="faq">
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>男性でも受講しやすいですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>はい。20〜40代の男女が対象です。動画はご自身で再生して受講でき、顔出しも不要です。誘い方や、相手が不機嫌なときの聞き方など、誘う側・聞く側どちらの立場の場面も扱います。</p></div></details>
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>パートナーがいます。一人で受講できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>はい。お一人で受講できます。たとえば、けんかの後に話を切り出すときや、一緒に過ごす時間を相談するときの伝え方を学べます。</p></div></details>
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>恋人がいなくても、受講する意味はありますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>はい。日常の会話から順番に学ぶので、出会いの前の段階から役立ちます。アプリや結婚相談所と並行して使うこともできます。</p></div></details>
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>スタンダードとプレミアムは、何が違いますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>スタンダードは、会話の基本に加えて恋愛・パートナーシップ、ケーススタディ、2ヶ月に1回のオンライン勉強会があります。プレミアムでは、スタンダードの動画教材に加えて、スキンシップ教材を学べます。</p></div></details>
+        <details><summary><span class="q" aria-hidden="true">Q</span><span>パートナーがいなくても、受講できますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>はい。これから出会いたい方も、交際中・結婚している方も受講できます。基本は一人で動画を見て学びます。</p></div></details>
+        <details><summary><span class="q" aria-hidden="true">Q</span><span>パートナーと一緒に受講する必要はありますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>いいえ。お一人で受講できます。学んだことを、次に話すときに試してみてください。</p></div></details>
+        <details><summary><span class="q" aria-hidden="true">Q</span><span>セックスの教材は、どのプランで見られますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>プレミアムのみです。ライト・スタンダードには含まれません。</p></div></details>
         <details><summary><span class="q" aria-hidden="true">Q</span><span>顔出しは必要ですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>動画講座はご自身で再生して受講でき、顔出しは不要です。</p></div></details>
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>忙しくても続けられますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>動画は1本7〜15分です。通勤や移動中などのスキマ時間に、少しずつ続けられます。</p></div></details>
-        <details><summary><span class="q" aria-hidden="true">Q</span><span>恋愛テクニックを教えるスクールですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>いいえ。相手を「攻略」するためのテクニックではなく、自分の気持ちを伝え、相手の気持ちを聞く関わり方を学ぶ教育サービスです。</p></div></details>
+        <details><summary><span class="q" aria-hidden="true">Q</span><span>恋愛テクニックを教えるスクールですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>いいえ。相手を「攻略」するためではなく、自分の気持ちを伝え、相手の気持ちを聞く関わり方を学ぶ教育サービスです。</p></div></details>
         <details><summary><span class="q" aria-hidden="true">Q</span><span>解約やプラン変更はできますか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a" aria-hidden="true">A</span><p>解約は会員サイトのお支払い画面から、プラン変更は公式LINEからお手続きいただけます。</p></div></details>
       </div>
     </div>
   </section>
 
-  <!-- 10 最後 -->
-  <section class="final" aria-labelledby="final-title">
+  <!-- 9 最後 -->
+  <section class="sec final" aria-labelledby="final-title">
     <div class="wrap">
       <h2 id="final-title"><span class="nw">好きな人と、</span><span class="nw">本音で話せるように。</span></h2>
-      <p>毎日の会話から、スキンシップまで。<br><span class="ph">次に会ったときの一言を、</span><span class="ph">一緒に考えていきましょう。</span></p>
+      <p><span class="ph">会話も、恋愛も、</span><span class="ph">ふたりの身体の触れ合いも。</span></p>
       <div class="final-actions">
-        <a class="btn btn-main btn-wide" href="#pricing">プランと料金を見る<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <p class="line-link">迷ったら、<a href="https://line.me/R/ti/p/@177udwvf">公式LINEでプラン選びを相談</a>できます</p>
+        <a class="btn btn-main" href="#pricing">プランと料金を見る<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="line">迷ったら、<a href="https://line.me/R/ti/p/@177udwvf">公式LINEでプラン選びを相談</a>できます</p>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(比較用の試作 v10)</p>
+  <p>© ComuMee(比較・確認用の試作 v11)</p>
   <p>写真:Pexels</p>
 </footer>
 
 <div class="fixed" id="fixed"><a class="btn btn-main" href="#pricing">プランと料金を見る</a></div>
 
 <script>
-  // 月払い/年払いの切りかえ
   const pricing = document.getElementById('pricing');
   document.querySelectorAll('.billing button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -735,15 +547,14 @@
       document.querySelectorAll('.billing button').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
     });
   });
-  // ヘッダーの線と、スマホ下部のボタン(料金表と最後の申込みが見えている間は隠す)
   const header = document.querySelector('.header'), fixed = document.getElementById('fixed');
   let hide = false;
-  const onScroll = () => { header.classList.toggle('on', scrollY > 8); fixed.classList.toggle('on', scrollY > 600 && !hide); };
+  const onScroll = () => { header.classList.toggle('on', scrollY > 8); fixed.classList.toggle('on', scrollY > 700 && !hide); };
   addEventListener('scroll', onScroll, { passive: true });
   if ('IntersectionObserver' in window) {
     const seen = new Set();
     const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)); hide = seen.size > 0; onScroll(); });
-    [pricing, document.querySelector('.final')].forEach(el => io.observe(el));
+    [document.querySelector('.fv'), pricing, document.querySelector('.final')].forEach(el => io.observe(el));
   }
   onScroll();
 </script>
