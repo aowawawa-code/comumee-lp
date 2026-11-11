@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ComuMee｜好きな人と、本音で話したい(試作 v18)</title>
+<title>ComuMee｜好きな人と、本音で話したい(試作 v19)</title>
 <meta name="description" content="会話も、恋愛も、ふたりの身体の触れ合いも。男女の違いや一人ひとりの感じ方を、一人で動画で学べるオンラインスクール ComuMee。(比較用の試作ページ)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -380,6 +380,18 @@
   .week-flow li.wk-try .wk { color: var(--pink-text); }
   .week-note { margin-top: 4px; }
 
+  .deeper { margin-top: 44px; padding: 28px 26px; background: var(--paper); border-radius: 16px; }
+  .deeper-label { font-size: 13px; font-weight: 700; color: var(--pink-text); letter-spacing: .08em; }
+  .deeper-title { margin-top: 8px; font-size: clamp(20px, 2.6vw, 24px); font-weight: 900; line-height: 1.6; letter-spacing: .03em; }
+  .deeper-src { margin-top: 4px; font-size: 13px; color: var(--ink-3); }
+  .deeper-scene { margin-top: 16px; font-size: 16px; font-weight: 700; line-height: 1.85; padding-left: 14px; border-left: 3px solid var(--pink); }
+  .deeper-body { margin-top: 14px; font-size: 15px; color: var(--ink-2); }
+  .deeper-try { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 16px; font-weight: 700; line-height: 1.85; }
+  .deeper-try b { display: block; font-size: 12px; color: var(--main); letter-spacing: .08em; }
+  .plan-choose { max-width: 760px; margin: 28px auto 0; text-align: center; display: grid; gap: 10px; }
+  .plan-choose p { font-size: 16px; line-height: 1.9; }
+  .plan-choose b { color: var(--main); font-size: 18px; margin-left: 2px; }
+  .plan-choose .plan-choose-sub { font-size: 14px; color: var(--ink-2); }
   .plan-diff { max-width: 820px; margin: 28px auto 0; text-align: center; font-size: 15px; line-height: 1.9; color: var(--ink-2); }
 
   /* 7 料金 */
@@ -471,7 +483,7 @@
   <div class="wrap header-in">
     <a class="logo" href="#top" aria-label="ComuMee トップへ"><b>ComuMee</b><small>コミュミー</small></a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#themes">学べる内容</a><a href="#week">最初の1週間</a><a href="#sex">触れ方・セックス</a><a href="#voices">受講生の声</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
+      <a href="#themes">学べる内容</a><a href="#week">入会後の学び方</a><a href="#sex">触れ方・セックス</a><a href="#voices">受講生の声</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
     </nav>
     <a class="btn btn-sub" href="#pricing">プランと料金</a>
   </div>
@@ -546,12 +558,21 @@
       <h2 class="h2" id="week-title"><span class="ph">スタンダードに入ったら、</span><span class="ph">最初の1週間はこう学びます。</span></h2>
       <p class="lead">最初に受ける講義は<span class="nw">「コミュニケーションW1」</span>。「言えば、伝わる」という思い込みから始まります。</p>
       <ol class="week-flow">
-        <li><span class="wk">テーマ</span><div><h3>言えば、伝わる？</h3><p>「ちゃんと言ったのに、伝わってなかった」。自分が思ったこと、口にしたこと、相手が受け取ったことは、同じとは限りません。</p></div></li>
-        <li><span class="wk">理解編<small>約12分</small></span><div><h3>会話を成り立たせる、5つの要素</h3><p>気持ちを言葉や表情にする、相手の言葉から意味を読み取る、どう受け取ったかを返す、会話の背景、言葉以外で伝わるもの。同じ「大丈夫」でも、声や表情で違って聞こえる理由を知ります。</p></div></li>
-        <li><span class="wk">ケーススタディ編<small>約5分</small></span><div><h3>どこでずれたのか、どう直すか</h3><p>対面、LINE、職場の3つのケースで考えます。たとえば、「了解」とだけ返したら「怒ってる？」と聞かれたのはなぜか。</p></div></li>
-        <li class="wk-try"><span class="wk">次に会ったとき</span><div><h3>一言、確かめる。一言、足す。</h3><p>約束は「10時、だよね？」と聞き返す。LINEは「了解！楽しみ」と気持ちを添える。好きな人とのやりとりでも、そのまま使えます。</p></div></li>
+        <li><span class="wk">テーマ</span><div><h3>言えば、伝わる？</h3><p>思ったこと、口にしたこと、相手が受け取ったことは、同じとは限りません。</p></div></li>
+        <li><span class="wk">理解編<small>約12分</small></span><div><h3>会話を成り立たせる、5つの要素</h3><p>同じ「大丈夫」でも、声や表情で違って聞こえる理由を知ります。</p></div></li>
+        <li><span class="wk">ケーススタディ編<small>約5分</small></span><div><h3>どこでずれたのか、どう直すか</h3><p>対面、LINE、職場の3つのケースで考えます。</p></div></li>
+        <li class="wk-try"><span class="wk">次に会ったとき</span><div><h3>一言、確かめる。一言、足す。</h3><p>「10時、だよね？」と聞き返す。LINEに「楽しみ」と気持ちを添える。</p></div></li>
       </ol>
       <p class="note week-note">※ 時間は、W1の完成動画の長さです。毎週、このように理解編で考え方を知り、ケーススタディ編で身近な場面に当てはめます。</p>
+
+      <div class="deeper">
+        <p class="deeper-label">その先では、恋愛やパートナーとの場面へ</p>
+        <h3 class="deeper-title"><span class="ph">「聞いてほしかった、</span><span class="ph">だけなのに。」</span></h3>
+        <p class="deeper-src">恋愛・パートナーシップ 第8週「恋愛・パートナー間で起きやすい会話のズレ」より</p>
+        <p class="deeper-scene"><span class="ph">疲れた日に話をしたら、</span><span class="ph">相手は心配して、</span><span class="ph">解決策をたくさん出してくれた。</span><span class="ph">ありがたいはずなのに、</span><span class="ph">なぜか寂しい。</span></p>
+        <p class="deeper-body">講義では、共感と助言のどちらが正しいかを決めません。相手が今ほしい支え方と、こちらの差し出し方がずれると、良かれと思った言葉でもすれ違う。そして、それは性別では決まりません。だから、先に確かめます。</p>
+        <p class="deeper-try"><b>次の会話で</b><span class="ph">聞く側なら、</span><span class="ph">「今は聞いてほしい？</span><span class="ph">それとも、一緒に考えたい？」</span><br><span class="ph">話す側なら、</span><span class="ph">「今日は、</span><span class="ph">聞いてほしいだけなんだ」と</span><span class="ph">先に伝えてみる。</span></p>
+      </div>
     </div>
   </section>
 
@@ -611,7 +632,11 @@
         </div>
         <p class="tax">表示価格はすべて税抜です。</p>
       </div>
-      <p class="plan-diff"><span class="ph">ライトでは、日常の会話を学べます。</span><span class="ph">スタンダードでは、さらに恋愛・男女の違い、パートナーシップ、スキンシップと性の講座、</span><span class="ph">ケーススタディ編と2ヶ月に1回の勉強会が加わります。</span><span class="ph">出会いから、付き合ってから・結婚してからまで学びたい方に。</span></p>
+      <div class="plan-choose">
+        <p><span class="ph">まずは、人との会話を学びたい方には</span><b>ライト</b>。</p>
+        <p><span class="ph">気になる人を誘うときも、</span><span class="ph">付き合ってから気持ちがすれ違ったときも、</span><span class="ph">自分で考えて言葉を選べるようになりたい方には</span><b>スタンダード</b>。</p>
+        <p class="plan-choose-sub">恋愛・男女の違い、パートナーシップ、スキンシップと性までを、理解編とケーススタディ編で学べます。2ヶ月に1回の勉強会もあります。</p>
+      </div>
 
       <div class="plans">
         <article class="plan" id="plan-light" aria-labelledby="pl-light">
@@ -732,7 +757,7 @@
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(比較・確認用の試作 v18)</p>
+  <p>© ComuMee(比較・確認用の試作 v19)</p>
   <p>写真:Pexels</p>
 </footer>
 
